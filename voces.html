@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LUZ Y TINTA</title>
+    <link href="https://fonts.googleapis.com/css2?family=Century+Gothic&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Century+Schoolbook&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Philosopher&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Philosopher', sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            padding-top: 50px;
+        }
+
+        .navbar {
+            background-color: #000000;
+            overflow: hidden;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            padding: 16px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            
+        }
+
+        .navbar a {
+            color: #f2f2f2;
+            text-align: center;
+            padding: 14px 15px;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .navbar a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        .search-bar {
+            flex-grow: 1;
+            display: flex;
+            justify-content: center;
+        }
+
+        .search-bar input {
+            padding: 3px;
+            margin-top: 8px;
+            font-size: 14px;
+            border: none;
+            border-radius: 4px;
+        }
+
+        .section {
+            padding: 60px;
+            margin: 20px;
+            background-color: white;
+            border-radius: 0;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .imagen-container {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .imagen-container img {
+            width: 100%;
+            height: auto;
+            max-height: 250px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .banda-texto {
+            background-color: #000000;
+            color: white;
+            padding: 10px 10px;
+            text-align: center;
+            font-size: 18px;
+            margin: 0;
+            font-family: 'Philosopher', sans-serif;
+        }
+
+        .texto-superpuesto {
+            position: absolute;
+            top: 50%;
+            left: 80%;
+            transform: translate(-50%, -50%);
+            color: #000000;
+            font-size: 70px;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+            text-align: right;
+        }
+
+        .recuadro {
+            background-color: #FFE274;
+            padding: 20px;
+            color: #000000;
+            margin: 0;
+            border-radius: 0;
+            text-align: center;
+            font-family: 'Century Schoolbook', serif;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .recuadro img {
+            width: 350px;
+            height: auto;
+            margin-left: 50px;
+        }
+
+        .recuadro h2, .recuadro p {
+            margin: 10;
+            text-align: center;
+            padding-left: 20px; 
+        }
+
+        .recuadro-2 {
+            background-color: #ffffff;
+            padding: 20px;
+            color: #000000;
+            margin: 0;
+            border-radius: 0;
+            text-align: center;
+            font-family: 'Century Schoolbook', serif;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .recuadro-2 img {
+            width: 1200px;
+            height: auto;
+            margin-left: 0px; 
+        }
+
+        .recuadro-2 h2, .recuadro-2 p {
+            margin: 10;
+            text-align: justify;
+            padding-left: 20px; 
+        }
+        
+        .recuadro5 {
+            background-color: #fff;
+            padding: 20px;
+            color: #000000;
+            margin: 0;
+            border-radius: 0;
+            text-align: center;
+            font-family: 'Century Schoolbook', serif;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+         .recuadro5 img {
+            width: 350px;
+            height: auto;
+            margin-left: 50px; 
+        }
+        
+        .columnas {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .columna {
+            flex: 1;
+            padding: 10px;
+            text-align: justify;
+        }
+        
+        .recuadro6 {
+            background-color: #EA4E69;
+            padding: 20px;
+            color: #000000;
+            margin: 0;
+            border-radius: 0;
+            text-align: center;
+            font-family: 'Century Schoolbook', serif;
+            display: flex;
+            justify-content: space-between;
+            align-items: center; 
+        }
+        .recuadro6 img {
+            width: 350px;
+            height: auto;
+            margin-left: 50px;
+        }
+        
+        .recuadro0 {
+            background-color: #EA4E69;
+            padding: 20px;
+            color: #000000;
+            margin: 0;
+            border-radius: 0;
+            text-align: center;
+            font-family: 'Century Schoolbook', serif;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .recuadro0 img {
+            width: 1200px;
+            height: auto;
+            margin-left: 0px; 
+        }
+        
+        .recuadrof {
+            background-color: #EA4E69;
+            padding: 20px;
+            color: #000000;
+            margin: 0;
+            border-radius: 0;
+            text-align: center;
+            font-family: 'Century Schoolbook', serif;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .recuadrof img {
+            width: 1200px;
+            height: auto;
+            margin-left: 0px; 
+        }
+       
+      .recuadro11 {
+            background-color: #40BCD5;
+            padding: 20px;
+            color: #000000;
+            margin: 0;
+            border-radius: 0;
+            text-align: center;
+            font-family: 'Century Schoolbook', serif;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .recuadro11 img {
+            width: 350px;
+            height: auto;
+            margin-left: 50px;
+        }
+         .recuadro111 {
+            background-color: #fff;
+            padding: 20px;
+            color: #000000;
+            margin: 0;
+            border-radius: 0;
+            text-align: center;
+            font-family: 'Century Schoolbook', serif;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .recuadro111 img {
+            width: 350px;
+            height: auto;
+            margin-left: 50px;
+        }
+     .recuadro9 {
+            background-color: #40BCD5;
+            padding: 20px;
+            color: #000000;
+            margin: 0;
+            border-radius: 0;
+            text-align: center;
+            font-family: 'Century Schoolbook', serif;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+         .recuadro9 img {
+            width: 350px;
+            height: auto;
+            margin-left: 50px; 
+        }
+           @media (max-width: 768px) {
+    .navbar a {
+        font-size: 12px;
+        padding: 10px    
+    
+    }
+                 
+    .section {
+        padding: 30px;
+        margin: 10px;
+    }
+
+   .recuadro img, .recuadro-2 img, .recuadro5 img, .recuadro6 img,.recuadro0 img,.recuadrof img, .recuadro11 img, .recuadro111 img,.recuadro9 img  {
+        width: 100%; 
+        margin: 10px 0;
+    }
+
+  .recuadro,  .recuadro-2, .recuadro5, .recuadro6, .recuadro0, .recuadrof, .recuadro11, .recuadro111, .recuadro9 {
+        flex-direction: column; 
+        align-items: center; 
+    }
+
+    .columnas {
+        flex-direction: column; 
+    }
+
+    .columna {
+        margin-bottom: 20px; 
+    }
+
+    .texto-superpuesto {
+        font-size: 17px; 
+    }
+
+    .banda-texto {
+        font-size: 16px; 
+        padding: 8px; 
+    }
+
+    .imagen-container img, .recuadro9 img,  {
+        max-height: 200px; 
+    }
+    
+     .menu-toggle {
+            display: none;
+            cursor: pointer;
+            font-size: 24px;
+            color: #f2f2f2;
+        }
+
+        .nav-links {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .nav-links.hidden {
+            display: none;
+        }
+              .menu-icon {
+            display: none; 
+            font-size: 30px;
+            cursor: pointer;
+            padding: 14px;
+            color: white;
+        }
+
+        .menu-items {
+            display: flex;
+        }    
+        @media (max-width: 768px) {
+    .menu-icon {
+        display: block; 
+    }
+
+    .menu-items {
+        display: none; 
+        flex-direction: column; 
+        width: 100%; 
+    }
+
+    .menu-items a {
+        padding: 10px 20px; 
+        text-align: left; 
+    }
+
+    .menu-items.active {
+        display: flex; 
+    }
+    </style>
+</head>
+<body>
+    <div class="imagen-container">
+        <img src="imm1.png"lt="Influencers">
+        <div class="texto-superpuesto">Influencers del diseño</div> 
+    </div>
+
+    <div class="banda-texto">
+        Voces del diesño
+    </div>
+
+    <div class="navbar" style="font-family: Philosopher, sans-serif">
+    <div class="menu-icon" onclick="toggleMenu()">
+        &#9776; 
+    </div>    
+<div class="menu-items" id="menuItems">
+
+            <a href="index.html">Inicio</a>
+            <a href="frescura.html">Frescura Gráfica</a>
+            <a href="tintas.html">Tintas de inspiración</a>
+            <a href="mexicana.html">Diseño a la Mexicana</a>
+            <a href="lente.html">A través del Lente</a>
+            <a href="voces.html">Voces del diseño</a>
+            <a href="siluetas.html">Siluetas y Serifas</a>
+            <a href="ebook.html">Ebook</a>
+        </div>
+
+    </div>
+    
+    <div class="recuadro">
+        <div>
+            <h2>Vanila Ryder</h2>
+            <i>Acuarela a la mexicana</i>
+            <p>“ Terminé mi carrera, me titulé con mi álbum ilustrado, trabajé para HBO Max, colabore con Adobe...Fue el año de cumplir metas...y vamos por más”. -Vanila Ryder, 2023
+
+            </p>
+        </div>
+        <img src="VANILA%20RYDER%2002.png" alt="vanila">
+    </div>
+    <div class="recuadro-2">
+       <img src="E7LPM5CWQAA1JBA.jpeg" alt="Vanlila">
+    </div>
+    
+    <div class="recuadro-2">
+      <div class="columnas">
+            <div class="columna">
+            <h2>Trayectoría<br></h2>
+            <p>Jessica Álvarez, conocida en la comunidad artística como Vanila Ryder, es una ilustradora y diseñadora gráfica egresada de la UAM Azcapotzalco, cuyo trabajo se distingue por su delicado uso de la acuarela y su habilidad en la ilustración digital. Vanila Ryder ha sido profundamente influenciada por la estética y las técnicas artísticas de la cultura japonesa, lo que se refleja en la sutileza y el detalle de sus obras.
+            Aunque Vanila trabaja tanto en formatos digitales como tradicionales, su verdadera pasión radica en la acuarela, una técnica que utiliza para crear iustraciones llenas de vida y color. </p>
+            </div>
+          
+          <div class="columna">
+              <h2>Estilo<br></h2>
+            <p>Su estilo combina la delicadeza de la acuarela con la precisión de la ilustración digital, resultando en obras que son visualmente atractivas y emocionalmente resonantes. Además, forma parte de la comunidad de Domestika, donde comparte su portafolio y participa en cursos, ayudando a otros a explorar y desarrollar sus habilidades artísticas. Cabe mencionar que ha hecho colaboraciones con estudios de renomnre como Cartoon Network.</p>
+              </div>
+           </div>
+           </div> 
+    
+        <div class="recuadro5">
+       <img src="GNEdDFvWcAAqDCB.jpeg" alt="vanila">
+       <img src="Vanila%20Ryder%201.jpg" alt="vanila"> 
+       <img src="GTv4seJWwAA3DeZ.jpeg" alt="vanila">
+    </div>
+           <div class="recuadro">
+    
+     <img src="F98dxpLW8AEE4PJ.jpeg" alt="vanila">      
+     <img src="FsPrsv2WIA0GO9h.jpeg" alt="vanila">   
+     <img src="GTv4seJWwAA3DeZ.jpeg" alt="vanila">         
+    </div>
+    
+     <div class="recuadro6">
+        <div>
+            <h2>Patricia Nicolas</h2>
+            <i>Reina del fotomontaje Dark Fantasy</i>
+            <p>“Aprendí a editar moviendolé a lo menso a Photoshop”. - Patricia Nicolas , 2024 </p>
+        </div>
+        <img src="PATRICIA%20NICOLAS%2002.png" alt="pat">
+    </div>
+     <div class="recuadro-2">
+       <img src="cop2.jpg" alt="pat">
+    </div>
+    
+     <div class="recuadro-2">
+      <div class="columnas">
+            <div class="columna">
+            <h2>Trayectoría<br></h2>
+            <p>Originaria de Oaxaca, Patricia Nicolás ha capturado la imaginación de miles con su estilo de fotomontaje que fusiona la fantasía oscura con elementos cotidianos. Su trabajo se caracteriza por la transformación de lo real en lo surreal, creando imágenes que parecen sacadas de un sueño.
+            Sus composiciones están cargadas de simbolismo y emoción, y han encontrado un público entusiasta en plataformas como TikTok. </p>
+            </div>
+          
+          <div class="columna">
+              <h2>Estilo<br></h2>
+            <p>Patricia ha utilizado las redes sociales como una herramienta educativa, compartiendo tutoriales de edición y técnicas de Photoshop que van desde lo básico hasta lo más avanzado. Con un estilo de enseñanza accesible y un humor que resuena con la cultura mexicana, ha construido una comunidad leal que no solo admira su trabajo, sino que también aprende de él. Sus cursos formales de edición en Photoshop han sido un éxito, mostrando cómo el arte digital puede trascender las fronteras culturales y lingüísticas.</p>
+              </div>
+           </div>
+           </div> 
+    
+    <div class="recuadro5">
+       <img src="297278499_329033072682407_4956662416937396321_n%20(1).jpg" alt="pat">
+       <img src="329290308_511196534373402_5237043490136412945_n.jpg" alt="pat"> 
+       <img src="341169719_526398082799357_712734959712913654_n.jpg" alt="pat">
+    </div>
+    
+      <div class="recuadro0">
+       <img src="cop3.jpg" alt="pat">
+    </div>
+    
+      <div class="recuadro11">
+        <div>
+            <h2>Roco PSD</h2>
+            <i>Maestro del Photoshop</i>
+            <p>Roco de la Portilla, también conocido como Roco PSD se ha convertido en un referente indispensable en el mundo de la edición digital gracias a su dominio de Photoshop. Roco junto a su perro Gordom han tenido una presencia fuerte en redes sociales como Instagram, YouTube, y TikTok.</p>
+        </div>
+        <img src="ROCO%2003.png" alt="roco">
+    </div>
+      <div class="recuadro111">
+         <img src="DzqkTTjx_400x400.png" alt="roco"> 
+        <div>
+            <p>El contenido de Roco se mantiene fresco y relevante, siempre alineado con las últimás tendencias del diseño. Entre los cursos que Roco proprciona destecan Roco enseña cómo realizar ediciones complejas, como manipulación de imágenes, creación de efectos especiales y retoque fotográfico.</p>
+        </div>
+        
+    </div>
+     <div class="recuadro-2">
+      <div class="columnas">
+            <div class="columna">
+            <h2>Trayectoría<br></h2>
+            <p>Roco también ha trabajado para grandes artistas como Angelique Boyer y en el diseño de la etiqueta y edicon promocional del tequila “El Gran Malo” de Luisisto ComunicaSu habilidad para comunicar conceptos complejos de manera sencilla lo ha convertido en un mentor para su comunidad, ofreciendo consejos personalizados y creando un espacio donde el aprendizaje es tanto efectivo como entretenido. Su compromiso con la educación y su pasión por el diseño gráfico aseguran que su influencia seguirá creciendo</p>
+            </div>
+          
+          <div class="columna">
+              <h2>Estilo<br></h2>
+            <p>Su estilo de enseñanza es claro, didáctico y adaptado tanto para principiantes como para usuarios avanzados, lo que ha permitido a muchos mejorar significativamente sus habilidades.
+            En el uso de herramientas y funciones particulares de Photoshop, como máscaras, capas de ajuste, pinceles personalizados, y más. A veces realiza correcciones en vivo de trabajos enviados por sus estudiantes o seguidores, explicando paso a paso cómo mejorar las ediciones.</p>
+              </div>
+           </div>
+           </div> 
+     <div class="recuadro9">
+       <img src="ROCO%2003.jpg" alt="roco">
+       <img src="EL-GRAN-MALO.jpg" alt="roco"> 
+    <img src="pott.jpg" alt="roco"> 
+    </div>
+   <script>
+    function toggleMenu() {
+    const menuItems = document.getElementById('menuItems');
+    menuItems.classList.toggle('active');
+    }
+
+    </script>
+  
+</body>
+</html>
